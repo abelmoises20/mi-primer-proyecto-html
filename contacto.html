@@ -26,13 +26,14 @@
 
      <form action="/procesar-formulario" method="POST">
             <!--Campos de texto-->
-            <input type="text" name="nombre" placeholder="Tu nombre" required><br><br>
+            <input type="text" name="nombre" placeholder=Tu nombre" required><br><br>
 
             <!--Email-->
             <input type="email" name="email" placeholder="tucorreo@email.com" required><br><br>
 
             <!--Teléfono-->
             <input type="tel" name="telefono" pattern="[0-9]{9}" placeholder="123456789"><br><br>
+
             <!-- Lista desplegable -->
             <label for="asunto">Asunto:</label>
             <select name="asunto" id="asunto" required>
@@ -40,10 +41,7 @@
                  <option value="consulta">Consulta</option>
                  <option value="sugerencia">Sugerencia</option>
                  <option value="queja">Queja</option>
-            </select>
-
-            <!--Contraseña-->
-            <input type="password" name="contraseña" minlength="8" placeholder="Contraseña" required><br><br>
+            </select><br><br>
 
             <!--Área de texto-->
             <textarea name="mensaje" placeholder="Tu mensaje aquí..." rows="4"></textarea><br><br>
@@ -59,7 +57,7 @@
             <input type="radio" name="genero" value="masculino" id="masculino">
             <label for="masculino">Masculino</label>
             <input type="radio" name="genero" value="femenino" id="femenino">
-            <label for="femenino">Femenino</label>
+            <label for="femenino">Femenino</label><br><br>
 
             <!--Botón enviar-->
             <button type="submit">Enviar</button>
