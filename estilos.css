@@ -50,6 +50,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
+<<<<<<< HEAD
 /* ===================== */
 /* Estilos para formularios */
 /* ===================== */
@@ -179,3 +180,26 @@ th {
 
 tr:nth-child(even) {
     background: #f9f9f9; /* filas a*
+=======
+/* Contenedor del formulario*/
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding:20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+/*grupos de formulario*/
+.form-group {
+    margin-bottom: 20px;
+}
+/*etiquetas*/
+.form-group label {
+    display: block;
+    margin- weight: bold;
+    color:#333;
+}
+
+
+>>>>>>> 75b041238e7390554c2d08d05b2d8d96ff3ad1a2
