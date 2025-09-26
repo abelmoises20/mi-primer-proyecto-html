@@ -1,71 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto | Mi Tienda</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <header>
-        <img src="foto.jpg" alt="logo">
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="contacto.html">Contacto</a>
-         </nav>
-    
 
+    <!-- HEADER (exactamente igual que en index.html) -->
+    <header>
+        <div class="logo-container">
+            <img src="imagenes/foto.jpg" alt="logo">
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+        </nav>
     </header>
 
-    <main>
-        <h1>Formulario de Contactos</h1>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="contacto">
+        <h1>Contáctanos</h1>
+        <p>Por favor completa el formulario para enviarnos tu consulta.</p>
 
-        <p>Por favor, completa el siguiente forumulario y te responderemos lo antes posible</p>
-        
+        <form class="formulario-contacto">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
 
-     <form action="/procesar-formulario" method="POST">
-            <!--Campos de texto-->
-            <input type="text" name="nombre" placeholder=Tu nombre" required><br><br>
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" placeholder="tuemail@ejemplo.com" required>
 
-            <!--Email-->
-            <input type="email" name="email" placeholder="tucorreo@email.com" required><br><br>
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
 
-            <!--Teléfono-->
-            <input type="tel" name="telefono" pattern="[0-9]{9}" placeholder="123456789"><br><br>
-
-            <!-- Lista desplegable -->
-            <label for="asunto">Asunto:</label>
-            <select name="asunto" id="asunto" required>
-                 <option value="">Selecciona un asunto</option>
-                 <option value="consulta">Consulta</option>
-                 <option value="sugerencia">Sugerencia</option>
-                 <option value="queja">Queja</option>
-            </select><br><br>
-
-            <!--Área de texto-->
-            <textarea name="mensaje" placeholder="Tu mensaje aquí..." rows="4"></textarea><br><br>
-
-            <!--Seleccionar fecha-->
-            <input type="date" name="fecha"><br><br>
-
-              <!-- Checkbox -->
-            <input type="checkbox" name="newsletter" id="newsletter">
-            <label for="newsletter">Suscribirse </label>
-
-            <!-- Radio buttons -->
-            <p>Género:</p>
-            <input type="radio" name="genero" value="masculino" id="masculino">
-            <label for="masculino">Masculino</label>
-            <input type="radio" name="genero" value="femenino" id="femenino">
-            <label for="femenino">Femenino</label><br><br>
-
-            <!--Botón enviar-->
             <button type="submit">Enviar</button>
         </form>
     </main>
+
+    <!-- FOOTER (igual al de index.html) -->
     <footer>
-        <p>&copy; 2025 Mi empresa ! <a href="privacidad.html">Privacidad</a></p>
-    </footer> 
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Servicio al cliente</h3>
+                <ul>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Tiempos de envío</a></li>
+                    <li><a href="#">Formas de pago</a></li>
+                    <li><a href="#">Cambios y devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legales</h3>
+                <ul>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contáctanos</h3>
+                <p>Email: servicio@mitienda.com</p>
+                <p>Tel: +51 999 999 999</p>
+            </div>
+        </div>
+        <p class="copy">&copy; 2025 Mi Tienda de Ropa</p>
+    </footer>
+
 </body>
 </html>

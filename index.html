@@ -1,65 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Primer Proyecto HTML</title>
+    <title>Mi Tienda</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <header>
-        <img src="foto.jpg" alt="logo">
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="contacto.html">Contacto</a>
-         </nav>
-    
+        <!-- Logo centrado -->
+        <div class="logo-container">
+            <img src="imagenes/foto.jpg" alt="Logo de la tienda">
+        </div>
 
+        <!-- Barra de navegación -->
+        <nav class="navbar">
+            <a href="index.html">Formal</a>
+            <a href="casual.html">Casual</a>
+            <a href="ropa-interior.html">Ropa Interior</a>
+            <a href="calzado.html">Todo Calzado</a>
+            <a href="accesorios.html">Accesorios</a>
+            <a href="liquidacion.html">Liquidación</a>
+        </nav>
     </header>
 
-    <main>
-    <h1>Bienvenidos</h1>
-    <p>Este es el contenido principal.</p>
+    <!-- Banner principal -->
+    <section class="banner">
+        <img src="imagenes/banner.png" alt="Promoción principal">
+    </section>
 
-    <h2> Tabla</h2>
-    <table border="1">
-        <tr>
-            <th>Nombre</th>
-            <th>Edad</th>
-            <th>Ciudad</th>
-        </tr>
-        <tr>
-            <td>Ana</td>
-            <td>25</td>
-            <td>Lima</td>
-        </tr>
-        <tr>
-            <td>Juan</td>
-            <td>30</td>
-            <td>Arequipa</td>
-        </tr>
-        <tr>
-            <td>Abel</td>
-            <td>27</td>
-            <td>Lima</td>
-        </tr>
-        <tr>
-            <td>Jesus</td>
-            <td>25</td>
-            <td>Ancash</td>
-        </tr>
-        <tr>
-            <td>Abel</td>
-            <td>27</td>
-            <td>Lima</td>
-        </tr>
-    </table>
-</main>
+    <h2 class="titulo-categorias">CATEGORÍAS</h2>
+    
+    <!-- Sección de categorías -->
+    <section class="categorias">
+        <a href="sacos.html" class="categoria">
+            <img src="imagenes/sacos.jpg" alt="Sacos">
+            <p>Sacos</p>
+        </a>
+        <a href="camisas.html" class="categoria">
+            <img src="imagenes/camisas.jpg" alt="camisas">
+            <p>Camisas</p>
+        </a>
+        <a href="pantalones.html" class="categoria">
+            <img src="imagenes/pantalones.jpg" alt="pantalones">
+            <p>Pantalones</p>
+        </a>
+        <a href="calzado.html" class="categoria">
+            <img src="imagenes/calzado.jpg" alt="Calzado">
+            <p>Calzado</p>
+        </a>
+        <a href="relojes.html" class="categoria">
+            <img src="imagenes/relojes.jpg" alt="relojes">
+            <p>relojes</p>
+        </a>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Mi empresa ! <a href="privacidad.html">Privacidad</a></p>
-    </footer> 
+    <footer class="footer">
+    <div class="footer-container">
+        <!-- Servicio al cliente -->
+        <div class="footer-section">
+            <h3>Servicio al cliente</h3>
+            <ul>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Guía de compras</a></li>
+                <li><a href="#">Tiempos y costos de envío</a></li>
+                <li><a href="#">Formas de pago</a></li>
+                <li><a href="#">Cambios y devoluciones</a></li>
+            </ul>
+        </div>
+
+        <!-- Legales -->
+        <div class="footer-section">
+            <h3>Legales</h3>
+            <ul>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Libro de reclamaciones</a></li>
+            </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <ul>
+                <li>Tel: +51 989174974</li>
+                <li><a href="contacto.html">Ir al formulario de contacto</a></li>
+               <li>Lunes a Viernes 9:00 am - 6:00 pm</li>
+                <li>Av. Ficticia 123, Ciudad</li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="copy">&copy; 2025 Mi Tienda de Ropa</p>
+</footer>
+
 </body>
 </html>
-
