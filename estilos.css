@@ -73,9 +73,11 @@ body {
     font-weight: bold;
 }
 
+
+
 .categoria img {
-    width: 200px;        /* 🔧 MISMO ANCHO */
-    height: 200px;       /* 🔧 MISMA ALTURA */
+    width: 200px;        /*  MISMO ANCHO */
+    height: 200px;       /*  MISMA ALTURA */
     object-fit: cover;   /* 📌 Mantiene la proporción y recorta la imagen si es necesario */
     border-radius: 8px;
     transition: transform 0.2s;
@@ -187,8 +189,8 @@ footer {
     right: 20px;
     width: 60px;
     height: 60px;
-    background-color: #25D366; /* Verde oficial de WhatsApp */
-    border-radius: 50%; /* HACE QUE SEA CÍRCULO */
+    background-color: #25D366; 
+    border-radius: 50%; 
     display: flex;
     justify-content: center;
     align-items: center;
