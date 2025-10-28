@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Tienda</title>
+    <meta name="description" content="Mi Tienda — ropa y accesorios de calidad. Compra sacos, camisas, pantalones, calzado y relojes. Envíos a todo el país.">
+    <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
     <header>
         <!-- Logo  -->
         <div class="logo-container">
@@ -45,7 +48,7 @@
 </nav>
 <!-- ...código existente... -->
     </header>
-
+    <main id="main-content">
     <!-- Banner principal -->
     <section class="banner">
         <img src="imagenes/banner.png" alt="Promoción principal">
@@ -56,26 +59,27 @@
     <!-- Sección de categorías -->
     <section class="categorias">
         <a href="sacos.html" class="categoria">
-            <img src="imagenes/sacos.jpg" alt="Sacos">
+            <img src="imagenes/sacos.jpg" alt="Saco elegante para hombre" loading="lazy">
             <p>Sacos</p>
         </a>
         <a href="camisas.html" class="categoria">
-            <img src="imagenes/camisas.jpg" alt="camisas">
+            <img src="imagenes/camisas.jpg" alt="Camisa formal de algodón" loading="lazy">
             <p>Camisas</p>
         </a>
         <a href="pantalones.html" class="categoria">
-            <img src="imagenes/pantalones.jpg" alt="pantalones">
+            <img src="imagenes/pantalones.jpg" alt="Pantalón de vestir" loading="lazy">
             <p>Pantalones</p>
         </a>
         <a href="calzado.html" class="categoria">
-            <img src="imagenes/calzado.jpg" alt="Calzado">
+            <img src="imagenes/calzado.jpg" alt="Calzado cómodo y elegante" loading="lazy">
             <p>Calzado</p>
         </a>
         <a href="relojes.html" class="categoria">
-            <img src="imagenes/relojes.jpg" alt="relojes">
+            <img src="imagenes/relojes.jpg" alt="Reloj de pulsera elegante" loading="lazy">
             <p>relojes</p>
         </a>
     </section>
+    </main>
 
     <footer class="footer">
     <div class="footer-container">
@@ -108,7 +112,7 @@
                 <li>Tel: +51 989174974</li>
                 <li><a href="contacto.html">Ir al formulario de contacto</a></li>
                 <li>Lunes a Viernes 9:00 am - 6:00 pm</li>
-                <li>Av. Ficticia 123, Ciudad</li>
+                <li>Av. Cesar Vallejo 123, Villa el Salvador</li>
             </ul>
         </div>
     </div>
@@ -118,8 +122,7 @@
 <a href="https://wa.me/51912271093" class="whatsapp-btn" target="_blank">
     <img src="imagenes/whatsapp.png" alt="WhatsApp" style="width:60px;">
 </a>
-
-
-
+<!-- Botón volver arriba -->
+<button id="back-to-top" aria-label="Volver arriba">↑</button>
 </body>
 </html>

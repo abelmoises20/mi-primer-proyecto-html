@@ -245,6 +245,44 @@ footer {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* Skip link accesible */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+  width: auto;
+  height: auto;
+  padding: 8px 12px;
+  background:#222;
+  color:#fff;
+  z-index:9999;
+  border-radius:4px;
+}
+
+/* Back to top */
+#back-to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: none;
+  background:#222;
+  color:#fff;
+  border:none;
+  padding:8px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  z-index:9999;
+}
+#back-to-top.show { display:block; }
+
 /* Diseño responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
     .navbar {
