@@ -270,18 +270,33 @@ footer {
 /* Back to top */
 #back-to-top {
   position: fixed;
-  right: 16px;
+  left: 16px;            /* ESQUINA INFERIOR IZQUIERDA */
   bottom: 16px;
-  display: none;
-  background:#222;
-  color:#fff;
-  border:none;
-  padding:8px 10px;
-  border-radius:6px;
-  cursor:pointer;
-  z-index:9999;
+  display: none;         /* oculto por defecto; JS añade la clase .show */
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 9999;
+  font-size: 18px;
 }
-#back-to-top.show { display:block; }
+
+#back-to-top.show {
+  display: block;
+}
+
+#back-to-top:hover {
+  background-color: #333;
+}
+
+/* Mensajes de error en formulario */
+.field-error {
+  color: #b00020;
+  font-size: 0.95rem;
+  margin-top: 6px;
+}
 
 /* Diseño responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -310,4 +325,5 @@ footer {
     main, .footer-container {
         padding: 10px;
     }
+
 }
