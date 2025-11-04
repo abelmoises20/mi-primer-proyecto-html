@@ -12,19 +12,43 @@
             <img src="imagenes/foto.jpg" alt="Logo de la tienda">
         </div>
         <nav class="navbar">
-            <a href="index.html">Inicio</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="contacto.html">Contacto</a>
+            <div class="dropdown">
+                <a href="index.html">Formal</a>
+                <div class="dropdown-content">
+                    <a href="sacos.html">Saco</a>
+                    <a href="pantalones.html">Pantalón</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="casual.html">Casual</a>
+                <div class="dropdown-content">
+                    <a href="camisas.html">Camisa</a>
+                </div>
+            </div>
+            <a href="ropa-interior.html">Ropa Interior</a>
+            <div class="dropdown">
+                <a href="calzado.html">Todo Calzado</a>
+                <div class="dropdown-content">
+                    <a href="calzado.html">Zapatos</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="accesorios.html">Accesorios</a>
+                <div class="dropdown-content">
+                    <a href="relojes.html">Relojes</a>
+                </div>
+            </div>
+            <a href="liquidacion.html">Liquidación</a>
         </nav>
     </header>
 
-    <main>
+    <main class="servicios">
         <h1>Servicios</h1>
         <p>
             En <strong>Mi Tienda</strong> ofrecemos una experiencia de compra completa para nuestros clientes. 
             Contamos con asesoría personalizada en moda, atención al cliente antes y después de tu compra, 
             envíos a todo el país y opciones de cambios y devoluciones. Nuestro objetivo es que encuentres 
-            el estilo que buscas y disfrutes de un servicio de calidad.
+            todo lo que necesitas para lucir bien y sentirte cómodo.
         </p>
     </main>
 
@@ -33,23 +57,31 @@
             <div class="footer-section">
                 <h3>Servicio al cliente</h3>
                 <ul>
+                    <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+                    <li><a href="guia-de-compras.html">Guía de compras</a></li>
                     <li><a href="contacto.html">Contáctanos</a></li>
                 </ul>
             </div>
+
             <div class="footer-section">
                 <h3>Legales</h3>
                 <ul>
                     <li><a href="terminos.html">Términos y condiciones</a></li>
+                    <li><a href="politica-privacidad.html">Política de privacidad</a></li>
                 </ul>
             </div>
+
             <div class="footer-section">
                 <h3>Contacto</h3>
                 <ul>
                     <li>Tel: +51 989174974</li>
+                    <li>Email: <a href="mailto:info@mitienda.com">info@mitienda.com</a></li>
                 </ul>
             </div>
         </div>
         <p class="copy">&copy; 2025 Mi Tienda de Ropa</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
