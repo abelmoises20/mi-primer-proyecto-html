@@ -57,8 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
       firstInvalid = firstInvalid || correo;
     }
 
-    if (!mensaje || mensaje.value.trim().length < 10) {
-      showError(mensaje || form, 'El mensaje debe tener al menos 10 caracteres.');
+    // Validación por número de palabras (mín. 10 palabras)
+    const wordCount = mensaje ? mensaje.value.trim().split(/\s+/).filter(Boolean).length : 0;
+    if (!mensaje || wordCount < 10) {
+      showError(mensaje || form, 'El mensaje debe tener al menos 10 palabras.');
       firstInvalid = firstInvalid || mensaje;
     }
 
