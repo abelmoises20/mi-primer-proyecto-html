@@ -1,40 +1,146 @@
+/* Busca el estilo 'body' y luego los estilos de navegación... */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Logo centrado */
-.logo-container {
-    text-align: center;
-    padding: 10px 0;
-}
-.logo-container img {
-    max-width: 150px;
+/* Modificación: Asegura que el header sea un bloque para que la barra de navegación vaya abajo */
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 0;
 }
 
-/* Barra de navegación */
+
+/* Contenedor superior del header */
+.top-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+/* Logo a la izquierda */
+.logo-container {
+    flex: 0 0 auto;
+}
+
+.logo-container img {
+    max-height: 80px;
+    width: auto;
+}
+
+/* Botones de usuario alineados a la derecha */
+.user-actions {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto; /* Empuja los botones hacia la derecha */
+}
+
+/* Nuevo: Estilo para el contenedor superior (Logo a la izq, Acciones a la der) */
+.header-top {
+    display: flex;
+    /* Coloca el espacio restante entre el logo y las acciones de usuario */
+    justify-content: space-between; 
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 10px 20px; /* Un poco de padding en los lados */
+}
+
+/* Asegura que los botones de usuario se mantengan a la derecha y con espacio */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* margin-right: 0; si habías puesto un margen muy grande */
+}
+
+/* Estilos para la barra de navegación */
 .navbar {
+    width: 100%;
     display: flex;
     justify-content: center;
-    gap: 30px;
-    background-color: #f5f5f5;
-    padding: 15px 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    background: #f8f8f8;
+    border-top: 1px solid #eee;
 }
-.navbar a {
-    text-decoration: none;
+
+/* Estilos para los elementos dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown > a {
     color: #333;
-    font-weight: bold;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: color 0.3s;
 }
-.navbar a:hover {
-    color: red;
+
+.dropdown > a:hover {
+    color: #0066cc;
+}
+
+/* Contenido del dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Mostrar dropdown al hacer hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Enlaces directos en la navbar */
+.navbar > a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+.navbar > a:hover {
+    color: #0066cc;
 }
 
 /* Banner principal */
+.banner {
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+}
+
 .banner img {
     width: 100%;
-    display: block;
+    height: auto;
+    object-fit: cover;
 }
 .titulo-categorias {
     text-align: center;
@@ -210,42 +316,6 @@ footer {
     box-shadow: 0px 6px 12px rgba(0,0,0,0.4);
 }
 
-/* Menú desplegable */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;      /* Justo debajo del botón */
-    left: 0;
-    background-color: #fff;
-    min-width: 180px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 6px;
-    margin-top: 0;  /* Sin espacio extra */
-}
-
-.dropdown-content a {
-    color: #333;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-weight: normal;
-}
-
-.dropdown-content a:hover {
-    background-color: #f5f5f5;
-    color: red;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 /* Skip link accesible */
 .skip-link {
   position: absolute;
@@ -395,7 +465,7 @@ main.contenido section.collapsed > *:not(h2) {
   .dropdown.open .dropdown-content { display: block; }
 }
 
-/* --- Animación de entrada (fade-in) --- */
+/* --- Animación de entrada (fade-in) */
 .fade-in {
   opacity: 0;
   transform: translateY(12px);
@@ -475,4 +545,264 @@ main.servicios h1 {
   margin-bottom: 12px;
   font-size: 1.8rem;
   font-weight: 700;
+}
+
+/* Estilos para la página de productos */
+.productos-page {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.producto-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.producto-card h3 {
+    margin: 1rem;
+    font-size: 1.1rem;
+}
+
+.producto-card .precio {
+    margin: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.producto-card .stock {
+    margin: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.producto-actions {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.talla-select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.add-to-cart {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background: #34495e;
+}
+
+/* Notificación del carrito */
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #2ecc71;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    display: none;
+    animation: slideIn 0.3s ease;
+}
+
+/* Notificaciones del carrito */
+.notificacion {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #2ecc71;
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+/* Estilos para botones de usuario */
+.user-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    background: #f8f8f8;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: #eee;
+}
+
+/* Estilos específicos para el carrito */
+.cart-button {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #e74c3c;
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* Hacer el header flexible */
+header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilos para la página del carrito */
+.carrito-page {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.carrito-items {
+    margin-bottom: 2rem;
+}
+
+.carrito-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.carrito-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.item-detalles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.item-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cantidad-btn {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+}
+
+.eliminar-btn {
+    color: #e74c3c;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.carrito-resumen {
+    background: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.total-final {
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-top: 2px solid #ddd;
+    padding-top: 1rem;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkout-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+    
+    .user-actions {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        margin: 1rem 0;
+    }
 }

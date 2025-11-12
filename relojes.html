@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libro de Reclamaciones | Mi Tienda</title>
+    <title>Relojes | Mi Tienda</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="imagenes/foto.jpg" alt="Logo de la tienda">
+        <div class="top-header">
+            <div class="logo-container">
+                <img src="imagenes/foto.jpg" alt="Logo de la tienda">
+            </div>
+            
+            <div class="user-actions">
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-home"></i>
+                    Inicio
+                </a>
+                <a href="carrito.html" class="nav-button cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="nav-button login-button">
+                    <i class="fas fa-user"></i>
+                    Iniciar Sesión
+                </button>
+            </div>
         </div>
+
         <nav class="navbar">
             <div class="dropdown">
                 <a href="index.html">Formal</a>
@@ -41,10 +60,24 @@
             <a href="liquidacion.html">Liquidación</a>
         </nav>
     </header>
-    <main>
-        <h1>Libro de Reclamaciones</h1>
-        <p>Si tienes algún reclamo o sugerencia, puedes registrarlo aquí. Nos comprometemos a responderte en el menor tiempo posible.</p>
+
+    <main class="productos-page">
+        <h1>Relojes</h1>
+        
+        <div class="productos-grid">
+            <article class="producto-card">
+                <img src="imagenes/reloj1.jpg" alt="Reloj Análogo Clásico">
+                <h3>Reloj Análogo Clásico</h3>
+                <p class="precio">S/. 299.90</p>
+                <p class="stock">Stock: 4 unidades</p>
+                <div class="producto-actions">
+                    <!-- Sin selector de talla para relojes -->
+                    <button class="add-to-cart" data-id="reloj1">Añadir al carrito</button>
+                </div>
+            </article>
+        </div>
     </main>
+
     <footer class="footer">
         <div class="footer-container">
             <!-- Servicio al cliente -->
@@ -82,12 +115,11 @@
         </div>
         <p class="copy">&copy; 2025 Mi Tienda de Ropa</p>
     </footer>
-
     <!-- Botón de WhatsApp -->
     <a href="https://wa.me/51912271093" class="whatsapp-btn" target="_blank">
         <img src="imagenes/whatsapp.png" alt="WhatsApp" style="width:60px;">
     </a>
-
+    
     <script src="script.js"></script>
 </body>
 </html>

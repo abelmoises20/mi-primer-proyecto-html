@@ -5,14 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Términos y Condiciones | Mi Tienda</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
     <!-- HEADER -->
     <header>
-        <div class="logo-container">
-            <img src="imagenes/foto.jpg" alt="Logo de Mi Tienda">
+        <div class="top-header">
+            <div class="logo-container">
+                <img src="imagenes/foto.jpg" alt="Logo de la tienda">
+            </div>
+            
+            <div class="user-actions">
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-home"></i>
+                    Inicio
+                </a>
+                <a href="carrito.html" class="nav-button cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="nav-button login-button">
+                    <i class="fas fa-user"></i>
+                    Iniciar Sesión
+                </button>
+            </div>
         </div>
+
         <nav class="navbar">
             <div class="dropdown">
                 <a href="index.html">Formal</a>
@@ -29,9 +48,9 @@
             </div>
             <a href="ropa-interior.html">Ropa Interior</a>
             <div class="dropdown">
-                <a href="calzado.html">Todo Calzado</a>
+                <a href="zapatos.html">Todo Calzado</a>
                 <div class="dropdown-content">
-                    <a href="calzado.html">Zapatos</a>
+                    <a href="zapatos.html">Zapatos</a>
                 </div>
             </div>
             <div class="dropdown">
@@ -123,11 +142,14 @@
                 </ul>
             </div>
         </div>
-
         <p class="copy">&copy; 2025 Mi Tienda de Ropa</p>
     </footer>
 
-    <!-- Añadir carga de script (asegúrate de que script.js contiene el código mostrado abajo) -->
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/51912271093" class="whatsapp-btn" target="_blank">
+        <img src="imagenes/whatsapp.png" alt="WhatsApp" style="width:60px;">
+    </a>
+
     <script src="script.js"></script>
 </body>
 </html>

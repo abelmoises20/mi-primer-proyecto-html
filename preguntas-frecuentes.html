@@ -1,18 +1,50 @@
-oí<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preguntas Frecuentes | Mi Tienda</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <header>
-        <!-- ...header igual que index.html... -->
+        <div class="logo-container">
+            <img src="imagenes/foto.jpg" alt="Logo de la tienda">
+        </div>
+        <nav class="navbar">
+            <div class="dropdown">
+                <a href="index.html">Formal</a>
+                <div class="dropdown-content">
+                    <a href="sacos.html">Saco</a>
+                    <a href="pantalones.html">Pantalón</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="casual.html">Casual</a>
+                <div class="dropdown-content">
+                    <a href="camisas.html">Camisa</a>
+                </div>
+            </div>
+            <a href="ropa-interior.html">Ropa Interior</a>
+            <div class="dropdown">
+                <a href="zapatos.html">Todo Calzado</a>
+                <div class="dropdown-content">
+                    <a href="zapatos.html">Zapatos</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="accesorios.html">Accesorios</a>
+                <div class="dropdown-content">
+                    <a href="relojes.html">Relojes</a>
+                </div>
+            </div>
+            <a href="liquidacion.html">Liquidación</a>
+        </nav>
     </header>
     <main>
         <h1>Preguntas Frecuentes</h1>
         <h2>¿Cómo puedo realizar una compra?</h2>
-        <p>Solo selecciona tus productos, agrégalos al carrito y sigue el proceso de pago.</p>
+        <p>Solo selecciona tus productos, agréguelos al carrito y sigue el proceso de pago.</p>
         <h2>¿Cuánto tarda el envío?</h2>
         <p>El tiempo de entrega depende de tu ubicación, normalmente entre 2 y 5 días hábiles.</p>
         <h2>¿Puedo cambiar o devolver un producto?</h2>
@@ -48,12 +80,19 @@ oí<!DOCTYPE html>
                 <ul>
                     <li>Tel: +51 989174974</li>
                     <li><a href="contacto.html">Ir al formulario de contacto</a></li>
-                    <li>Lunes a Viernes 9:00 am - 5:00 pm</li>
-                    <li>Av. Cesar Vallejo 122 Villa el Salvador</li>
+                    <li>Lunes a Viernes 9:00 am - 6:00 pm</li>
+                    <li>Av. Cesar Vallejo 123, Villa el Salvador</li>
                 </ul>
             </div>
         </div>
         <p class="copy">&copy; 2025 Mi Tienda de Ropa</p>
     </footer>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/51912271093" class="whatsapp-btn" target="_blank">
+        <img src="imagenes/whatsapp.png" alt="WhatsApp" style="width:60px;">
+    </a>
+
+    <script src="script.js"></script>
 </body>
 </html>

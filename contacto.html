@@ -5,14 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Mi Tienda</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
     <!-- HEADER (exactamente igual que en index.html) -->
     <header>
-        <div class="logo-container">
-            <img src="imagenes/foto.jpg" alt="logo">
+        <div class="top-header">
+            <div class="logo-container">
+                <img src="imagenes/foto.jpg" alt="Logo de la tienda">
+            </div>
+            
+            <div class="user-actions">
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-home"></i>
+                    Inicio
+                </a>
+                <a href="carrito.html" class="nav-button cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="nav-button login-button">
+                    <i class="fas fa-user"></i>
+                    Iniciar Sesión
+                </button>
+            </div>
         </div>
+
         <nav class="navbar">
             <div class="dropdown">
                 <a href="index.html">Formal</a>
@@ -29,9 +48,9 @@
             </div>
             <a href="ropa-interior.html">Ropa Interior</a>
             <div class="dropdown">
-                <a href="calzado.html">Todo Calzado</a>
+                <a href="zapatos.html">Todo Calzado</a>
                 <div class="dropdown-content">
-                    <a href="calzado.html">Zapatos</a>
+                    <a href="zapatos.html">Zapatos</a>
                 </div>
             </div>
             <div class="dropdown">
@@ -64,8 +83,9 @@
     </main>
 
     <!-- FOOTER (igual al de index.html) -->
-    <footer>
+    <footer class="footer">
         <div class="footer-container">
+            <!-- Servicio al cliente -->
             <div class="footer-section">
                 <h3>Servicio al cliente</h3>
                 <ul>
@@ -76,21 +96,35 @@
                     <li><a href="cambios-devoluciones.html">Cambios y devoluciones</a></li>
                 </ul>
             </div>
+
+            <!-- Legales -->
             <div class="footer-section">
                 <h3>Legales</h3>
                 <ul>
-                    <li><a href="#">Términos y condiciones</a></li>
-                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="terminos.html">Términos y condiciones</a></li>
+                    <li><a href="privacidad.html">Política de privacidad</a></li>
+                    <li><a href="reclamaciones.html">Libro de reclamaciones</a></li>
                 </ul>
             </div>
+
+            <!-- Contacto -->
             <div class="footer-section">
-                <h3>Contáctanos</h3>
-                <p>Email: servicio@mitienda.com</p>
-                <p>Tel: +51 912 271 093 </p>
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Tel: +51 989174974</li>
+                    <li><a href="contacto.html">Ir al formulario de contacto</a></li>
+                    <li>Lunes a Viernes 9:00 am - 6:00 pm</li>
+                    <li>Av. Cesar Vallejo 123, Villa el Salvador</li>
+                </ul>
             </div>
         </div>
         <p class="copy">&copy; 2025 Mi Tienda de Ropa</p>
     </footer>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/51912271093" class="whatsapp-btn" target="_blank">
+        <img src="imagenes/whatsapp.png" alt="WhatsApp" style="width:60px;">
+    </a>
 
     <script src="script.js"></script>
 </body>

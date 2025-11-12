@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libro de Reclamaciones | Mi Tienda</title>
+    <title>Pantalones | Mi Tienda</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="imagenes/foto.jpg" alt="Logo de la tienda">
+        <div class="top-header">
+            <div class="logo-container">
+                <img src="imagenes/foto.jpg" alt="Logo de la tienda">
+            </div>
+            
+            <div class="user-actions">
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-home"></i>
+                    Inicio
+                </a>
+                <a href="carrito.html" class="nav-button cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="nav-button login-button">
+                    <i class="fas fa-user"></i>
+                    Iniciar Sesión
+                </button>
+            </div>
         </div>
+
         <nav class="navbar">
             <div class="dropdown">
                 <a href="index.html">Formal</a>
@@ -41,10 +60,33 @@
             <a href="liquidacion.html">Liquidación</a>
         </nav>
     </header>
-    <main>
-        <h1>Libro de Reclamaciones</h1>
-        <p>Si tienes algún reclamo o sugerencia, puedes registrarlo aquí. Nos comprometemos a responderte en el menor tiempo posible.</p>
+
+    <main class="productos-page">
+        <h1>Pantalones</h1>
+        
+        <div class="productos-grid">
+            <article class="producto-card">
+                <img src="imagenes/pantalon1.jpg" alt="Pantalón Negro Slim Fit">
+                <h3>Pantalón Negro Slim Fit</h3>
+                <p class="precio">S/. 159.90</p>
+                <p class="stock">Stock: 8 unidades</p>
+                <div class="producto-actions">
+                    <select class="talla-select">
+                        <option value="">Seleccionar talla</option>
+                        <option value="28">28</option>
+                        <option value="30">30</option>
+                        <option value="32">32</option>
+                        <option value="34">34</option>
+                        <option value="36">36</option>
+                    </select>
+                    <button class="add-to-cart" data-id="pantalon1">Añadir al carrito</button>
+                </div>
+            </article>
+
+            <!-- Copia este bloque para más pantalones, cambiando imágenes y datos -->
+        </div>
     </main>
+
     <footer class="footer">
         <div class="footer-container">
             <!-- Servicio al cliente -->

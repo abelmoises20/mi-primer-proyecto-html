@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libro de Reclamaciones | Mi Tienda</title>
+    <title>Zapatos | Mi Tienda</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="imagenes/foto.jpg" alt="Logo de la tienda">
+        <div class="top-header">
+            <div class="logo-container">
+                <img src="imagenes/foto.jpg" alt="Logo de la tienda">
+            </div>
+            
+            <div class="user-actions">
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-home"></i>
+                    Inicio
+                </a>
+                <a href="carrito.html" class="nav-button cart-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="nav-button login-button">
+                    <i class="fas fa-user"></i>
+                    Iniciar Sesión
+                </button>
+            </div>
         </div>
+
         <nav class="navbar">
             <div class="dropdown">
                 <a href="index.html">Formal</a>
@@ -41,10 +60,34 @@
             <a href="liquidacion.html">Liquidación</a>
         </nav>
     </header>
-    <main>
-        <h1>Libro de Reclamaciones</h1>
-        <p>Si tienes algún reclamo o sugerencia, puedes registrarlo aquí. Nos comprometemos a responderte en el menor tiempo posible.</p>
+
+    <main class="productos-page">
+        <h1>Zapatos</h1>
+        
+        <div class="productos-grid">
+            <!-- Productos de zapatos -->
+            <article class="producto-card">
+                <img src="imagenes/zapato1.jpg" alt="Zapato Oxford Negro">
+                <h3>Zapato Oxford Negro</h3>
+                <p class="precio">S/. 249.90</p>
+                <p class="stock">Stock: 6 unidades</p>
+                <div class="producto-actions">
+                    <select class="talla-select">
+                        <option value="">Seleccionar talla</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                    </select>
+                    <button class="add-to-cart" data-id="zapato1">Añadir al carrito</button>
+                </div>
+            </article>
+        </div>
     </main>
+
     <footer class="footer">
         <div class="footer-container">
             <!-- Servicio al cliente -->

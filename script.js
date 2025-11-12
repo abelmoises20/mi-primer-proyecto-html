@@ -193,4 +193,209 @@ document.addEventListener("DOMContentLoaded", function() {
             const h2 = sec.querySelector('h2');
             sec.id = h2 ? h2.textContent.trim().toLowerCase().replace(/\s+/g, '-') : 'sec-' + Math.random().toString(36).slice(2,7);
           }
-          if
+          const isVisible = entry.isIntersecting;
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === '#' + sec.id) {
+              link.classList.toggle('active', isVisible);
+              // LOG: indicar qué sección se está viendo
+              if (isVisible) console.log('Sección visible:', sec.id);
+            }
+          });
+        });
+      }, { threshold: 0.7 });
+
+      sections.forEach(sec => {
+        sec.style.scrollMarginTop = '80px'; // para un mejor alineamiento con el navbar
+        sectionObserver.observe(sec);
+      });
+    }
+  });
+})();
+
+// Manejo del carrito
+class Carrito {
+    constructor() {
+        this.items = JSON.parse(localStorage.getItem('carrito')) || [];
+        this.total = 0;
+        this.actualizarContador();
+    }
+
+    añadirProducto(producto) {
+        // Verificar si el producto ya existe
+        const itemExistente = this.items.find(item => item.id === producto.id);
+        
+        if (itemExistente) {
+            itemExistente.cantidad = (itemExistente.cantidad || 1) + 1;
+        } else {
+            producto.cantidad = 1;
+            this.items.push(producto);
+        }
+
+        this.guardar();
+        this.actualizarContador();
+        this.mostrarNotificacion('Producto añadido al carrito');
+    }
+
+    eliminarProducto(id) {
+        this.items = this.items.filter(item => item.id !== id);
+        this.guardar();
+        this.actualizarContador();
+    }
+
+    guardar() {
+        localStorage.setItem('carrito', JSON.stringify(this.items));
+    }
+
+    actualizarContador() {
+        const contador = document.querySelector('.cart-count');
+        if (contador) {
+            contador.textContent = this.items.length;
+        }
+    }
+
+    mostrarNotificacion(mensaje) {
+        const notif = document.createElement('div');
+        notif.className = 'notificacion';
+        notif.textContent = mensaje;
+        document.body.appendChild(notif);
+        setTimeout(() => notif.remove(), 3000);
+    }
+
+    renderizarCarrito() {
+        const container = document.getElementById('carrito-items');
+        const subtotalEl = document.getElementById('subtotal');
+        const igvEl = document.getElementById('igv');
+        const totalEl = document.getElementById('total');
+
+        if (!container || !subtotalEl || !igvEl || !totalEl) return;
+
+        if (this.items.length === 0) {
+            container.innerHTML = '<p class="carrito-vacio">Tu carrito está vacío</p>';
+            subtotalEl.textContent = 'S/. 0.00';
+            igvEl.textContent = 'S/. 0.00';
+            totalEl.textContent = 'S/. 0.00';
+            document.getElementById('checkout').disabled = true;
+            return;
+        }
+
+        // Mostrar productos
+        container.innerHTML = this.items.map(item => {
+            const precio = parseFloat(item.precio.replace('S/. ', ''));
+            const cantidad = item.cantidad || 1;
+            const subtotal = precio * cantidad;
+
+            return `
+                <div class="carrito-item" data-id="${item.id}">
+                    <img src="${item.imagen}" alt="${item.nombre}">
+                    <div class="item-detalles">
+                        <h3>${item.nombre}</h3>
+                        <p>Precio: S/. ${precio.toFixed(2)}</p>
+                        <p>Subtotal: S/. ${subtotal.toFixed(2)}</p>
+                    </div>
+                    <div class="item-cantidad">
+                        <button class="cantidad-btn restar">-</button>
+                        <span>${cantidad}</span>
+                        <button class="cantidad-btn sumar">+</button>
+                    </div>
+                    <button class="eliminar-btn">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `;
+        }).join('');
+
+        // Calcular totales
+        const subtotal = this.items.reduce((total, item) => {
+            const precio = parseFloat(item.precio.replace('S/. ', ''));
+            return total + (precio * (item.cantidad || 1));
+        }, 0);
+
+        const igv = subtotal * 0.18;
+        const total = subtotal + igv;
+
+        // Actualizar montos
+        subtotalEl.textContent = `S/. ${subtotal.toFixed(2)}`;
+        igvEl.textContent = `S/. ${igv.toFixed(2)}`;
+        totalEl.textContent = `S/. ${total.toFixed(2)}`;
+
+        // Habilitar botón de pago
+        document.getElementById('checkout').disabled = false;
+
+        // Agregar event listeners para botones
+        container.querySelectorAll('.carrito-item').forEach(item => {
+            const id = item.dataset.id;
+            
+            item.querySelector('.restar').addEventListener('click', () => {
+                this.actualizarCantidad(id, -1);
+            });
+            
+            item.querySelector('.sumar').addEventListener('click', () => {
+                this.actualizarCantidad(id, 1);
+            });
+            
+            item.querySelector('.eliminar-btn').addEventListener('click', () => {
+                this.eliminarProducto(id);
+            });
+        });
+    }
+
+    actualizarCantidad(id, delta) {
+        const itemIndex = this.items.findIndex(i => i.id === id);
+        if (itemIndex > -1) {
+            const item = this.items[itemIndex];
+            const nuevaCantidad = (item.cantidad || 1) + delta;
+            
+            if (nuevaCantidad < 1) {
+                this.items.splice(itemIndex, 1);
+            } else {
+                item.cantidad = nuevaCantidad;
+            }
+            
+            this.guardar();
+            this.actualizarContador();
+            this.renderizarCarrito();
+        }
+    }
+}
+
+// Inicializar carrito como variable global
+let carrito;
+
+// Inicializar todo cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    // Crear instancia del carrito
+    carrito = new Carrito();
+
+    // Añadir eventos a los botones de "Añadir al carrito"
+    const botonesAñadir = document.querySelectorAll('.add-to-cart');
+    botonesAñadir.forEach(boton => {
+        boton.addEventListener('click', function(e) {
+            e.preventDefault();
+            const card = this.closest('.producto-card');
+            if (!card) return;
+
+            const producto = {
+                id: this.dataset.id,
+                nombre: card.querySelector('h3').textContent,
+                precio: card.querySelector('.precio').textContent,
+                imagen: card.querySelector('img').src
+            };
+
+            carrito.añadirProducto(producto);
+        });
+    });
+
+    // Si estamos en la página del carrito, renderizarlo
+    if (window.location.pathname.includes('carrito.html')) {
+        carrito.renderizarCarrito();
+    }
+});
+
+
+
+
+
+
+
+
+
