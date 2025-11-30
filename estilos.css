@@ -1,3 +1,28 @@
+/* Reset / Box sizing */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Contenedor central consistente */
+:root { --site-max-width: 1200px; --gutter: 20px; }
+
+.top-header,
+.navbar,
+main,
+main#main-content,
+main.contenido,
+.footer-container {
+  max-width: var(--site-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
 /* Busca el estilo 'body' y luego los estilos de navegación... */
 body {
     margin: 0;
@@ -339,27 +364,28 @@ footer {
 
 /* Back to top */
 #back-to-top {
+  display: none;                 /* se muestra solo con JS */
   position: fixed;
-  left: 16px;            /* ESQUINA INFERIOR IZQUIERDA */
-  bottom: 16px;
-  display: none;         /* oculto por defecto; JS añade la clase .show */
-  background: #222;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #111;
   color: #fff;
   border: none;
-  padding: 8px 10px;
-  border-radius: 6px;
+  padding: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
   cursor: pointer;
-  z-index: 9999;
+  align-items: center;
+  justify-content: center;
   font-size: 18px;
+  line-height: 1;
 }
 
-#back-to-top.show {
-  display: block;
-}
-
-#back-to-top:hover {
-  background-color: #333;
-}
+/* Variante visible (si tu JS añade clase .show) */
+#back-to-top.show { display: flex; }
 
 /* Mensajes de error en formulario */
 .field-error {
@@ -637,22 +663,27 @@ main.servicios h1 {
     animation: slideIn 0.3s ease;
 }
 
-/* Notificaciones del carrito */
-.notificacion {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #2ecc71;
-    color: white;
-    padding: 1rem;
-    border-radius: 4px;
-    z-index: 1000;
-    animation: slideIn 0.3s ease;
+/* Contador del carrito */
+.cart-count {
+  background: #e74c3c;
+  color: #fff;
+  padding: 0 6px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  vertical-align: middle;
 }
 
-@keyframes slideIn {
-    from { transform: translateX(100%); }
-    to { transform: translateX(0); }
+/* Notificación temporal */
+.notificacion {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  background: #222;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  z-index: 9999;
 }
 
 /* Estilos para botones de usuario */
@@ -791,6 +822,12 @@ header {
 .checkout-btn:disabled {
     background: #ccc;
     cursor: not-allowed;
+}
+
+/* Ajustes responsive mínimos */
+@media (max-width: 900px) {
+  .top-header, .navbar, main, .footer-container { padding-left: 12px; padding-right: 12px; }
+  .producto-card { max-width: 100%; }
 }
 
 /* Responsive */

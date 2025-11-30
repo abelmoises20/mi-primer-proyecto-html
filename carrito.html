@@ -1,42 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito | Mi Tienda</title>
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Carrito</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <!-- Header igual que index.html -->
-    
-    <main class="carrito-page">
-        <h1>Tu Carrito de Compras</h1>
-        
-        <div id="carrito-items" class="carrito-items">
-            <!-- Los items se insertarán aquí dinámicamente -->
-        </div>
-        
-        <div class="carrito-resumen">
-            <div class="carrito-total">
-                <span>Subtotal:</span>
-                <span id="subtotal">S/. 0.00</span>
-            </div>
-            <div class="carrito-total">
-                <span>IGV (18%):</span>
-                <span id="igv">S/. 0.00</span>
-            </div>
-            <div class="carrito-total total-final">
-                <span>Total:</span>
-                <span id="total">S/. 0.00</span>
-            </div>
-            <button id="checkout" class="checkout-btn" disabled>
-                Proceder al Pago
-            </button>
-        </div>
-    </main>
+  <main>
+    <h1>Tu Carrito</h1>
+    <div id="carrito-items"></div>
 
-    <!-- Footer igual que index.html -->
-    <script src="script.js"></script>
+    <div class="resumen">
+      <p>Subtotal: <span id="subtotal">S/. 0.00</span></p>
+      <p>IGV (18%): <span id="igv">S/. 0.00</span></p>
+      <p>Total: <strong id="total">S/. 0.00</strong></p>
+      <button id="checkout" disabled>Pagar</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

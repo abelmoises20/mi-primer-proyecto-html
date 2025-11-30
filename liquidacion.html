@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Liquidación - Mi Tienda</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+    <header>
+    <div class="top-header">
+        <div class="logo-container">
+            <img src="imagenes/foto.jpg" alt="Logo de la tienda">
+        </div>
+        
+        <div class="user-actions">
+            <a href="index.html" class="nav-button">Inicio</a>
+            <a href="carrito.html" class="nav-button cart-button">
+              <span class="cart-count">0</span>
+            </a>
+            <button class="nav-button login-button">Iniciar</button>
+        </div>
+    </div>
+    
+    <nav class="navbar">
+        <div class="dropdown">
+            <a href="formal.html">Formal</a>
+            <div class="dropdown-content">
+                <a href="sacos.html">Saco</a>
+                <a href="pantalones.html">Pantalón</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="casual.html">Casual</a>
+            <div class="dropdown-content">
+                <a href="camisas.html">Camisa</a>
+            </div>
+        </div>
+        <a href="ropa-interior.html">Ropa Interior</a>
+        <div class="dropdown">
+            <a href="zapatos.html">Todo Calzado</a>
+            <div class="dropdown-content">
+                <a href="zapatos.html">Zapatos</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="accesorios.html">Accesorios</a>
+            <div class="dropdown-content">
+                <a href="relojes.html">Relojes</a>
+            </div>
+        </div>
+        <a href="liquidacion.html">Liquidación</a>
+    </nav>
+    </header>
+
+    <main id="main-content">
+      <h1>Liquidación</h1>
+
+      <section class="productos">
+        <div class="producto-card">
+          <img src="imagenes/oferta1.jpg" alt="Saco en oferta">
+          <h3>Saco -50%</h3>
+          <p class="precio">S/. 99.50</p>
+          <button class="add-to-cart" data-id="liq-001" data-nombre="Saco -50%" data-precio="99.50" data-imagen="imagenes/oferta1.jpg">Añadir al carrito</button>
+        </div>
+
+        <div class="producto-card">
+          <img src="imagenes/oferta2.jpg" alt="Camisa en oferta">
+          <h3>Camisa -30%</h3>
+          <p class="precio">S/. 69.30</p>
+          <button class="add-to-cart" data-id="liq-002" data-nombre="Camisa -30%" data-precio="69.30" data-imagen="imagenes/oferta2.jpg">Añadir al carrito</button>
+        </div>
+
+        <div class="producto-card">
+          <img src="imagenes/oferta3.jpg" alt="Pantalón oferta">
+          <h3>Pantalón -40%</h3>
+          <p class="precio">S/. 89.40</p>
+          <button class="add-to-cart" data-id="liq-003" data-nombre="Pantalón -40%" data-precio="89.40" data-imagen="imagenes/oferta3.jpg">Añadir al carrito</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Servicio al cliente</h3>
+            <ul>
+                <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+                <li><a href="guia-de-compras.html">Guía de compras</a></li>
+                <li><a href="envio.html">Tiempos y costos de envío</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Legales</h3>
+            <ul>
+                <li><a href="terminos.html">Términos y condiciones</a></li>
+                <li><a href="privacidad.html">Política de privacidad</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <ul>
+                <li>Tel: +51 989174974</li>
+                <li><a href="contacto.html">Formulario de contacto</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="copy">&copy; 2025 Mi Tienda de Ropa</p>
+    </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
